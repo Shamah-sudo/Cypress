@@ -14,11 +14,15 @@ class loginPage{
     getErrorMessage(){
         return cy.get('h3[data-test="error"]');
     }
-    enterUsername(username){
-        this.getUsernameField().type(username);
+    enterUsername(username) {
+        if (username) {
+            this.getUsernameField().type(username);
     }
+}
     enterPassword(password){
-        this.getPasswordField().type(password);
+        if (password){
+            this.getPasswordField().type(password);
+        }
     }
     clickLogin(){
         this.getLoginButton().click();
