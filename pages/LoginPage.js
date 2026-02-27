@@ -1,18 +1,18 @@
-class LoginPage{
+class loginPage{
     visit(){
         cy.visit('https://www.saucedemo.com/');
     }
     getUsernameField(){
-        return cy.get('#username');
+        return cy.get('#user-name');
     }
     getPasswordField(){
         return cy.get('#password');
     }
     getLoginButton(){
-        return cy.get('button[type="submit"]');
+        return cy.get('#login-button');
     }
     getErrorMessage(){
-        return cy.get('[data-test="error"]');
+        return cy.get('h3[data-test="error"]');
     }
     enterUsername(username){
         this.getUsernameField().type(username);
@@ -29,4 +29,4 @@ class LoginPage{
         this.clickLogin();
     }
 }
-export default LoginPage;
+export default loginPage;
